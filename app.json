@@ -2,13 +2,13 @@
   "expo": {
     "name": "Tarea6",
     "slug": "Tarea6",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/me.jpg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/me.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,13 +16,20 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ghosty.tarea6",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/me.jpg",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/me.jpg"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "da7a2a74-c19a-458d-85c8-13ef2f7730e8"
+      }
+    },
+    "owner": "ghosty_dev"
   }
 }

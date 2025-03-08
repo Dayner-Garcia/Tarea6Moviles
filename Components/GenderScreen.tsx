@@ -1,5 +1,15 @@
 import React, {useState} from "react";
-import {Button, Image, Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View} from "react-native";
+import {
+    Alert,
+    Button,
+    Image,
+    Keyboard,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableWithoutFeedback,
+    View
+} from "react-native";
 import axios from "axios";
 
 const GenderPredictionScreen = () => {
@@ -13,6 +23,16 @@ const GenderPredictionScreen = () => {
     };
 
     const determineGender = async () => {
+        if (!name) {
+            Alert.alert('El nombre no puede estar vacio.');
+            return;
+        }
+
+        if (/\d/.test(name)) {
+            Alert.alert('El nombre no puede contener numeros.');
+            return;
+        }
+
         try {
             const response = await axios.get(`https://api.genderize.io/?name=${name}`);
             const detectedGender = response.data.gender;
@@ -35,7 +55,7 @@ const GenderPredictionScreen = () => {
                 <Text style={styles.title}>Predecir generos por nombre</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Introduce tu numero para determinar tu genero"
+                    placeholder="Introduce tu nombre"
                     value={name}
                     onChangeText={setName}
                 />
